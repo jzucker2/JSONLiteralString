@@ -1,0 +1,16 @@
+PODS:
+  - JSONLiteralString (0.1.0)
+
+DEPENDENCIES:
+  - JSONLiteralString (from `.`)
+
+EXTERNAL SOURCES:
+  JSONLiteralString:
+    :path: .
+
+SPEC CHECKSUMS:
+  JSONLiteralString: e351056c359a5f082d1811d3e099a3bf470ba045
+
+PODFILE CHECKSUM: 670d1210902c29ac7bc8c2e7816afeacc4a0aa27
+
+COCOAPODS: 1.0.0
