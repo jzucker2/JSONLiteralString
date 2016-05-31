@@ -13,7 +13,7 @@
 - (NSString *)JLS_literalString {
     // bool check?
     if ([self isKindOfClass:[NSString class]]) {
-        return self;
+        return [NSString stringWithFormat:@"%@", self];
     } else if ([self isKindOfClass:[NSNumber class]]) {
         return [NSString stringWithFormat:@"%@", self];
     } else if ([self isKindOfClass:[NSArray class]]) {
@@ -32,6 +32,7 @@
         return literalString.copy;
     } else if ([self isEqual:[NSNull null]]) {
         // need to fix up null check with some tests
+        return [NSString stringWithFormat:@"[NSNull null],"];
     } else {
         return @"";
     }
