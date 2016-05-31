@@ -1,5 +1,5 @@
 PODS:
-  - JSONLiteralString (0.1.0)
+  - JSONLiteralString (0.2.0)
 
 DEPENDENCIES:
   - JSONLiteralString (from `.`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: .
 
 SPEC CHECKSUMS:
-  JSONLiteralString: 0877ff2df3da5e27994e52a942251b7902f0268c
+  JSONLiteralString: 29be1bf6bf6e5106b1df13d5ea1163541f82a020
 
 PODFILE CHECKSUM: d6fe277e28bccc3690d57de99e2c5d5632d967bf
 

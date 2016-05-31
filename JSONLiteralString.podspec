@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JSONLiteralString'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Converts JSON compatible Foundation objects into valid NSString literals.'
 
   s.description      = <<-DESC
