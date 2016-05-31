@@ -14,5 +14,4 @@
 #import "NSString+JLSAdditions.h"
 #import "NSObject+JLSAdditions.h"
 
-
 #endif /* JSONLiteralString_h */

@@ -10,6 +10,8 @@
 
 @interface NSString (JLSAdditions)
 
-- (NSString *)JLS_formattedLine;
+- (NSString *)JLS_formattedLineWithEndingComma:(BOOL)shouldEndWithComma;
+
+- (NSString *)JLS_literalWrap;
 
 @end

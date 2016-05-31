@@ -11,5 +11,8 @@
 @interface NSObject (JLSAdditions)
 
 - (NSString *)JLS_literalString;
+- (NSString *)JLS_unformattedLiteralString;
+- (NSString *)JLS_formattedLiteralString;
+//- (NSString *)JLS_literalWrap;
 
 @end

@@ -10,8 +10,12 @@
 
 @implementation NSString (JLSAdditions)
 
-- (NSString *)JLS_formattedLine {
-    return [NSString stringWithFormat:@"\t%@,", self];
+- (NSString *)JLS_formattedLineWithEndingComma:(BOOL)shouldEndWithComma {
+    return [NSString stringWithFormat:@"\t%@%@\n", self, (shouldEndWithComma ? @"," : @"")];
+}
+
+- (NSString *)JLS_literalWrap {
+    return [NSString stringWithFormat:@"\@%@", self];
 }
 
 @end
