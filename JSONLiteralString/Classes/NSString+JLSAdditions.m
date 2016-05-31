@@ -15,7 +15,7 @@
 }
 
 - (NSString *)JLS_literalWrap {
-    return [NSString stringWithFormat:@"\@%@", self];
+    return [@"@" stringByAppendingString:self];
 }
 
 @end
