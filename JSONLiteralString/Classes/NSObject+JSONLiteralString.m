@@ -20,14 +20,14 @@
         NSArray *selfArray = (NSArray *)self;
         NSMutableString *literalString = [@"[" mutableCopy];
         for (id item in selfArray) {
-            [literalString appendString:[item PNT_literalRepresentation]];
+            [literalString appendString:[item JLS_literalString]];
         }
         return literalString.copy;
     } else if ([self isKindOfClass:[NSDictionary class]]) {
         NSDictionary *selfDictionary = (NSDictionary *)self;
         __block NSMutableString *literalString = [@"{" mutableCopy];
         [selfDictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            [literalString appendFormat:@"%@: %@", key, [obj PNT_literalRepresentation]];
+            [literalString appendFormat:@"%@: %@", key, [obj JLS_literalString]];
         }];
         return literalString.copy;
     } else if ([self isEqual:[NSNull null]]) {

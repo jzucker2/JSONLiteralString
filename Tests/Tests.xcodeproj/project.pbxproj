@@ -525,9 +525,11 @@
 			baseConfigurationReference = 46BC999D098AC2EE31E51074 /* Pods-JLS-Tests-iOS-ObjC.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "JLS-Tests-iOS-ObjC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stanera.JLS-Tests-iOS-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -536,9 +538,11 @@
 			baseConfigurationReference = 10BC53DCBAAC0479CBBB2A87 /* Pods-JLS-Tests-iOS-ObjC.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "JLS-Tests-iOS-ObjC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "stanera.JLS-Tests-iOS-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
