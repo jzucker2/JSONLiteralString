@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <JSONLiteralString/NSObject+JSONLiteralString.h>
+#import <JSONLiteralString/JSONLiteralString.h>
 
 @interface JLSTestCase : XCTestCase
 

@@ -1,14 +1,15 @@
 //
-//  NSObject+JSONLiteralString.m
+//  NSObject+JLSAdditions.m
 //  Pods
 //
-//  Created by Jordan Zucker on 5/27/16.
+//  Created by Jordan Zucker on 5/31/16.
 //
 //
 
-#import "NSObject+JSONLiteralString.h"
+#import "NSObject+JLSAdditions.h"
+#import "NSString+JLSAdditions.h"
 
-@implementation NSObject (JSONLiteralString)
+@implementation NSObject (JLSAdditions)
 
 - (NSString *)JLS_literalString {
     // bool check?
