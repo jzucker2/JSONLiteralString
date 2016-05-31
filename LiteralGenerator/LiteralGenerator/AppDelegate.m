@@ -1,30 +1,23 @@
 //
-//  JLSTestCase.m
-//  Tests
+//  AppDelegate.m
+//  LiteralGenerator
 //
-//  Created by Jordan Zucker on 5/27/16.
+//  Created by Jordan Zucker on 5/31/16.
 //  Copyright © 2016 Jordan Zucker. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import <JSONLiteralString/JSONLiteralString.h>
+#import "AppDelegate.h"
 
-@interface JLSTestCase : XCTestCase
+@interface AppDelegate ()
 
+@property (weak) IBOutlet NSWindow *window;
 @end
 
-@implementation JLSTestCase
+@implementation AppDelegate
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    // Insert code here to initialize your application
     NSArray *messages = @[
                           @"********....... 8695 - 2016-05-17 11:59:32",
                           @123,
@@ -144,6 +137,11 @@
                           ];
     NSLog(@"original: %@", messages);
     NSLog(@"================================================");
+    NSLog(@"messages: %@", [messages JLS_formattedLiteralString]);
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+    // Insert code here to tear down your application
 }
 
 @end

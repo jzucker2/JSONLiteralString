@@ -1,15 +1,7 @@
-project 'Tests/Tests'
+project 'LiteralGenerator/LiteralGenerator'
 workspace 'JSONLiteralString'
 use_frameworks!
 
-target 'JLS-Tests-iOS-ObjC' do
-	pod "JSONLiteralString", :path => '.'
-end
-
-target 'JLS-Tests-OSX-ObjC' do
-	pod "JSONLiteralString", :path => '.'
-end
-
-target 'JLS-Tests-tvOS-ObjC' do
+target 'LiteralGenerator' do
 	pod "JSONLiteralString", :path => '.'
 end
