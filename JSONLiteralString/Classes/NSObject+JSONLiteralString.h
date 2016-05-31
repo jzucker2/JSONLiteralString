@@ -10,4 +10,6 @@
 
 @interface NSObject (JSONLiteralString)
 
+- (NSString *)JLS_literalString;
+
 @end

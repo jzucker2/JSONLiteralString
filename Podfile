@@ -6,11 +6,10 @@ target 'JLS-Tests-iOS-ObjC' do
 	pod "JSONLiteralString", :path => '.'
 end
 
-# target 'BKR-Tests-OSX-ObjC' do
-# 	pod "BeKindRewind", :path => '.'
-# end
+target 'JLS-Tests-OSX-ObjC' do
+	pod "JSONLiteralString", :path => '.'
+end
 
-# target 'BKR-Tests-tvOS-ObjC' do
-# 	pod "BeKindRewind", :path => '.'
-# end
-
+target 'JLS-Tests-tvOS-ObjC' do
+	pod "JSONLiteralString", :path => '.'
+end
