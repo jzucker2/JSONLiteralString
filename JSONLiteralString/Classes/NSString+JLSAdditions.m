@@ -10,12 +10,19 @@
 
 @implementation NSString (JLSAdditions)
 
-- (NSString *)JLS_formattedLineWithEndingComma:(BOOL)shouldEndWithComma {
-    return [NSString stringWithFormat:@"\t%@%@\n", self, (shouldEndWithComma ? @"," : @"")];
+- (NSString *)JLS_stringWithFormattedLineWithEndingComma:(BOOL)shouldEndWithComma {
+    return [NSString stringWithFormat:@"%@%@\n", self, (shouldEndWithComma ? @"," : @"")];
 }
 
-- (NSString *)JLS_literalWrap {
+- (NSString *)JLS_stringWithLiteralWrap {
     return [@"@" stringByAppendingString:self];
 }
+
+- (NSString *)JLS_stringWithAllNewLinesIndented {
+    NSString *indentFirstLineString = [@"\t" stringByAppendingString:self];
+    return [indentFirstLineString stringByReplacingOccurrencesOfString:@"\n" withString:@"\n\t"];
+}
+
+
 
 @end

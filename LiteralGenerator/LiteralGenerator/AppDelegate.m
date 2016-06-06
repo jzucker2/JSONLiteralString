@@ -137,7 +137,7 @@
                           ];
     NSLog(@"original: %@", messages);
     NSLog(@"================================================");
-    NSLog(@"messages: %@", [messages JLS_formattedLiteralString]);
+    NSLog(@"messages: %@", [messages JLS_literalString]);
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

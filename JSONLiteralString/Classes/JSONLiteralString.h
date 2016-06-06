@@ -11,6 +11,7 @@
 #ifndef JSONLiteralString_h
 #define JSONLiteralString_h
 
+#import "JLSLiteralRepresentation.h"
 #import "NSString+JLSAdditions.h"
 #import "NSObject+JLSAdditions.h"
 
