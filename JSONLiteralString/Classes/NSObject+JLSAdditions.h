@@ -10,7 +10,7 @@
 
 @interface NSObject (JLSAdditions)
 
-- (NSString *)JLS_objectLiteralString;
+- (NSString *)JLS_rootObjectLiteralString;
 - (NSString *)JLS_literalString;
 //- (NSString *)JLS_unformattedLiteralString;
 //- (NSString *)JLS_formattedLiteralString;

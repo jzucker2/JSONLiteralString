@@ -137,7 +137,15 @@
                           ];
     NSLog(@"original: %@", messages);
     NSLog(@"================================================");
-    NSLog(@"messages: %@", [messages JLS_literalString]);
+    NSLog(@"messages:");
+    NSLog(@"\n%@", [messages JLS_literalString]);
+    NSLog(@"================================================");
+    NSNumber *testNumber = @4;
+    NSString *testString = @"this";
+    NSLog(@"testNumber");
+    NSLog(@"%@", [testNumber JLS_literalString]);
+    NSLog(@"testString");
+    NSLog(@"%@", [testString JLS_literalString]);
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

@@ -11,7 +11,7 @@
 
 @implementation NSObject (JLSAdditions)
 
-- (NSString *)JLS_objectLiteralString {
+- (NSString *)JLS_rootObjectLiteralString {
     // bool check?
     if ([self isKindOfClass:[NSString class]]) {
         return [[NSString stringWithFormat:@"\"%@\"", self] JLS_stringWithLiteralWrap];
@@ -19,33 +19,37 @@
         return [[NSString stringWithFormat:@"%@", self] JLS_stringWithLiteralWrap];
     } else if ([self isKindOfClass:[NSArray class]]) {
         NSArray *selfArray = (NSArray *)self;
-        NSString *initialString = [[@"[" JLS_stringWithLiteralWrap] JLS_stringWithFormattedLineWithEndingComma:NO];;
+        NSString *initialString = [[@"[" JLS_stringWithLiteralWrap] JLS_stringWithFormattedLineWithEndingComma:NO];
         NSMutableString *literalString = [initialString mutableCopy];
         for (id item in selfArray) {
-            [literalString appendString:[[item JLS_literalString] JLS_stringWithFormattedLineWithEndingComma:YES]];
+            NSString *arrayItemString = [[item JLS_rootObjectLiteralString] JLS_stringWithFormattedLineWithEndingComma:YES];
+            [literalString appendString:arrayItemString];
         }
-        [literalString appendString:[@"]" JLS_stringWithFormattedLineWithEndingComma:YES]];
-        return literalString.copy;
+        NSString *openFinalString = [literalString.copy JLS_stringWithAllNewLinesIndented];
+        NSString *closingString = [@"]" JLS_stringWithFormattedLineWithEndingComma:YES];
+        return [openFinalString stringByAppendingString:closingString];
     } else if ([self isKindOfClass:[NSDictionary class]]) {
         NSDictionary *selfDictionary = (NSDictionary *)self;
         NSString *initialString = [[@"{" JLS_stringWithLiteralWrap] JLS_stringWithFormattedLineWithEndingComma:NO];
         __block NSMutableString *literalString = [initialString mutableCopy];
         [selfDictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            NSString *itemString = [NSString stringWithFormat:@"%@: %@", [key JLS_literalString], [obj JLS_literalString]];
-            [literalString appendString:[itemString JLS_stringWithFormattedLineWithEndingComma:YES]];
+            NSString *keyValueString = [NSString stringWithFormat:@"%@: %@", [key JLS_rootObjectLiteralString], [obj JLS_rootObjectLiteralString]];
+            NSString *itemString = [keyValueString JLS_stringWithFormattedLineWithEndingComma:YES];
+            [literalString appendString:itemString];
         }];
-        [literalString appendString:[@"}" JLS_stringWithFormattedLineWithEndingComma:YES]];
-        return literalString.copy;
+        NSString *openFinalString = [literalString.copy JLS_stringWithAllNewLinesIndented];
+        NSString *closingString = [@"}" JLS_stringWithFormattedLineWithEndingComma:YES];
+        return [openFinalString stringByAppendingString:closingString];
     } else if ([self isEqual:[NSNull null]]) {
         // need to fix up null check with some tests
-        return [NSString stringWithFormat:@"[NSNull null],"];
+        return [@"[NSNull null]" JLS_stringWithLiteralWrap];
     } else {
         return @"";
     }
 }
 
 - (NSString *)JLS_literalString {
-    return nil;
+    return [self JLS_rootObjectLiteralString];
 //    // bool check?
 //    if ([self isKindOfClass:[NSString class]]) {
 //        return [[NSString stringWithFormat:@"\"%@\"", self] JLS_stringWithLiteralWrap];
