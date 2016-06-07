@@ -26,7 +26,7 @@
             [literalString appendString:arrayItemString];
         }
         NSString *openFinalString = [literalString.copy JLS_stringWithAllNewLinesIndented];
-        NSString *closingString = [@"]" JLS_stringWithFormattedLineWithEndingComma:YES];
+        NSString *closingString = @"]";
         return [openFinalString stringByAppendingString:closingString];
     } else if ([self isKindOfClass:[NSDictionary class]]) {
         NSDictionary *selfDictionary = (NSDictionary *)self;
@@ -38,7 +38,7 @@
             [literalString appendString:itemString];
         }];
         NSString *openFinalString = [literalString.copy JLS_stringWithAllNewLinesIndented];
-        NSString *closingString = [@"}" JLS_stringWithFormattedLineWithEndingComma:YES];
+        NSString *closingString = @"}";
         return [openFinalString stringByAppendingString:closingString];
     } else if ([self isEqual:[NSNull null]]) {
         // need to fix up null check with some tests
